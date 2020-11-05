@@ -1,0 +1,28 @@
+//importing fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700');
+
+//adding colors
+
+$blackie:#0b0c10;
+$lightblackie:#1f2833;
+$grayie:#c5c6c7;
+$skyie:#66fcf1;
+$fadeblue:#45a29e;
+
+$light:#f8f8f8;
+
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $blackie;
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+html{
+    background: linear-gradient(to right,$blackie,$lightblackie);
+}
+
+
+html,body{
+    height: 100%;
+}
