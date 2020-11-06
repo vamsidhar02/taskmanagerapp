@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from 'src/app/task.service';
 
 @Component({
   selector: 'app-projectsview',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsviewComponent implements OnInit {
 
-  constructor() { }
+  constructor(private taskservice:TaskService) { }
 
   ngOnInit(): void {
+  }
+  createnewproject(){
+      //for now lets just test this
+      this.taskservice.createproject('testing').subscribe((response:any)=>{
+          console.log(response);
+      });
   }
 
 }
