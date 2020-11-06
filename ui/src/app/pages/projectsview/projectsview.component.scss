@@ -17,6 +17,7 @@
 }
 .tasks-list-container{
     display: flex;
+    position: relative;
     flex-direction: column;
     flex-grow: 1;
     padding:40px;
@@ -84,4 +85,17 @@
         &.complete{
             text-decoration: line-through;
         }
-    }
+}
+
+
+
+.task-add-button{
+    height: 55px;
+    width: 55px;
+    background: $primary;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    border-radius: 50%;
+    border: none;
+}
