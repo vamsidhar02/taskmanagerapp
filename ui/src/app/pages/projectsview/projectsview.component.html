@@ -15,21 +15,51 @@
             <!--
                 using the router link to route to the url/new-project to create a new project.
             -->
-            <button class="button" routerLink="/new-project"> + New Project</button>
+            <button class="button newprojectbutton" routerLink="/new-project"> + New Project</button>
         </div>
 
         <div class="tasks-list-container">
+            <div class="top-bar">
             <h1 class="title has-primary">
                 Tasks
             </h1>
-            <div class="task" *ngFor="let task of tasks">
+            <div class="dropdown is-hoverable is-right">
+                <div class="dropdown-trigger">
+                  <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                    <span>Settings</span>
+                  </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                    <div class="dropdown-content">
+                        <a [routerLink]="['/edit-project',selectedprojectid]" class="dropdown-item">
+                          Edit
+                        </a>
+                        <a (click)="onclickdeleteproject()" class="dropdown-item has-text-danger">
+                          Delete
+                        </a>
+                        </div>
+                </div>
+              </div>
+
+
+          
+
+            </div>
+
+
+            <div class="task" *ngFor="let task of tasks" (click)="ontaskclick(task)" [ngClass]="{'completed':task.completed}">
+               <div class="task-text">
                 <p>{{task.title}}</p>
+               </div>
+               <div class="task-buttons">
+                <button class="button" style="margin-right: 10px;" [routerLink]="['/projects',selectedprojectid,'edit-task',task._id]">Edit</button>
+                   <button class="button is-danger" (click)="taskdelete(task._id)">Delete</button>
+                </div>
             </div>
             
             <button class="task-add button" routerLink="./new-task">
                 <img src="../../../assets/plus-icon.svg" alt="">
             </button>
         </div>
-        
     </div>
 </div>

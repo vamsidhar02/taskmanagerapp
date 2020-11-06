@@ -1,0 +1,14 @@
+<div class="centered-content">
+    <div class="model-box">
+        <h1 class="title">
+            Edit Task
+        </h1>
+
+        <input #taskinput type="text" class="input" placeholder="Add Project Title">
+        <br><br>
+        <div class="buttons is-right">
+            <div class="button" routerLink='/'>Cancel</div>
+            <div class="button is-info" (click)="updatetask(taskinput.value)">Update</div>
+        </div>
+    </div>
+</div>

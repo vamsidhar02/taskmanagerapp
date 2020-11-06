@@ -60,7 +60,7 @@ app.patch('/projects/:projectid',(req,res)=>{
         //update the body which by the contents of req.body using id which we get from the req._id
         $set:req.body
     }).then(()=>{
-        res.sendStatus(200);//responding by sending status signal for the updated project project..(we can even send the updated project if we want to)
+        res.send({'message':'updated successfully'});//responding by sending status signal for the updated project project..(we can even send the updated project if we want to)
     });
 });
 
@@ -107,7 +107,7 @@ app.patch('/projects/:projectid/tasks/:taskid',(req,res)=>{
         $set:req.body
     }
     ).then(()=>{
-        res.sendStatus(200);
+        res.send({message:"update successfully"});
     });
 });
 

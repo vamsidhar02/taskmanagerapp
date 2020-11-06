@@ -10,6 +10,10 @@ const taskschema=new mongoose.Schema({
     projectid:{
         type:mongoose.Types.ObjectId,
         required:true,
+    },
+    completed:{
+            type:Boolean,
+            default:false,
     }
 });
 
