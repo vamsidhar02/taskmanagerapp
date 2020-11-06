@@ -6,41 +6,26 @@
                 Projects
             </h1>
             <div class="project-menu">
-                <a class="project-menu-item is-active">
+                <a class="project-menu-item" *ngFor="let project of projects" [routerLink]="['/projects',project._id]" routerLinkActive="is-active">
                     <p>
-                        project 1
-                    </p>
-                </a>
-                <a class="project-menu-item">
-                    <p>
-                        project 2
-                    </p>
-                </a>
-                <a class="project-menu-item">
-                    <p>
-                        project 3
+                        {{project.title}}
                     </p>
                 </a>
             </div>
             <!--
-                creating event handler for click event for creating new project
+                using the router link to route to the url/new-project to create a new project.
             -->
-            <button class="button" (click)="createnewproject()"> + New Project</button>
+            <button class="button" routerLink="/new-project"> + New Project</button>
         </div>
 
         <div class="tasks-list-container">
             <h1 class="title has-primary">
                 Tasks
             </h1>
-            <div class="task">
-                <p>tasks1</p>
+            <div class="task" *ngFor="let task of tasks">
+                <p>{{task.title}}</p>
             </div>
-            <div class="task">
-                <p>tasks1</p>
-            </div>
-            <div class="task complete">
-                <p>tasks1</p>
-            </div>
+            
         </div>
         
     </div>

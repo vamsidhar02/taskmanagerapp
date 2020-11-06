@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 import { TaskService } from 'src/app/task.service';
 
 @Component({
@@ -7,16 +8,21 @@ import { TaskService } from 'src/app/task.service';
   styleUrls: ['./projectsview.component.scss']
 })
 export class ProjectsviewComponent implements OnInit {
-
-  constructor(private taskservice:TaskService) { }
+  projects:any[];
+  tasks:any[];
+  constructor(private taskservice:TaskService ,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe((params:Params)=>{
+      console.log(params);
+      this.taskservice.gettasks(params.projectid).subscribe((tasks:any[])=>{
+        this.tasks=tasks;
+      }); 
+    });
+    this.taskservice.getprojects().subscribe((projects:any[])=>{
+      this.projects=projects;
+    });
   }
-  createnewproject(){
-      //for now lets just test this
-      this.taskservice.createproject('testing').subscribe((response:any)=>{
-          console.log(response);
-      });
-  }
+ 
 
 }

@@ -13,5 +13,11 @@ export class TaskService {
     //creating the project using post method from webrequest.service.ts
     return this.service.post('projects',{title});
   }
+  getprojects(){
+    return this.service.get('projects');
+  }
+  gettasks(projectid:string){
+    return this.service.get(`projects/${projectid}/tasks`)
+  }
 
 }
