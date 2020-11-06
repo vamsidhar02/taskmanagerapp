@@ -14,7 +14,6 @@ export class ProjectsviewComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params:Params)=>{
-      console.log(params);
       this.taskservice.gettasks(params.projectid).subscribe((tasks:any[])=>{
         this.tasks=tasks;
       }); 

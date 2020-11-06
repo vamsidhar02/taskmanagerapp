@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProjectsviewComponent } from './pages/projectsview/projectsview.component';
 import { NewProjectComponent } from './pages/new-project/new-project.component';
+import { NewTaskComponent } from './pages/new-task/new-task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectsviewComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    NewTaskComponent
   ],
   imports: [
     BrowserModule,

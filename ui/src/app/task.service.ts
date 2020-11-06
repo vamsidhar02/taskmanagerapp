@@ -19,5 +19,8 @@ export class TaskService {
   gettasks(projectid:string){
     return this.service.get(`projects/${projectid}/tasks`)
   }
+  createtasks(title:string,projectid:string){
+    return this.service.post(`projects/${projectid}/tasks`,{title})
+  }
 
 }

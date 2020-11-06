@@ -59,7 +59,7 @@
     color: $blackie;
     transition: transform 0.25s ease;
     &:active{
-        transform: scale(0.97);
+        transform: scale(0.92);
     }
 }
 
@@ -89,13 +89,13 @@
 
 
 
-.task-add-button{
+.task-add{
     height: 55px;
     width: 55px;
-    background: $primary;
+    background-color: $primary;
     position: absolute;
     bottom: 30px;
     right: 30px;
     border-radius: 50%;
-    border: none;
+
 }
